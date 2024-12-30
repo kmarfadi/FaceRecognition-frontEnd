@@ -95,6 +95,27 @@ onSubmit = () => {
     const regions = data.regions;
     if (regions) {
       this.calculateFaceLocation(regions);
+
+      // Increment entries on the server
+      fetch('https://facerec-server.onrender.com/image', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: this.state.user.id })
+      })
+      .then(response => response.json())
+      .then(updatedUser => {
+        this.setState(prevState => ({
+          user: {
+            ...prevState.user,
+            entries: updatedUser.entries ++,
+          }
+        }));
+      })
+      .catch(error => {
+        console.error('Error updating entries:', error);
+      });
     } else {
       console.warn('No face data detected.');
     }
@@ -103,6 +124,7 @@ onSubmit = () => {
     console.error('Error:', error);
   });
 };
+
 
 
 
