@@ -83,7 +83,7 @@ onSubmit = () => {
   this.setState({ imageUrl: this.state.input });
 
   // Sending the image URL to the server
-  fetch('http://localhost:3003/detect', {
+  fetch('https://facerec-server.onrender.com/detect', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
