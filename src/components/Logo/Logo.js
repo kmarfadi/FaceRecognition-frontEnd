@@ -18,7 +18,7 @@ const defaultOptions = {
 const Logo = () => {
 	return(
 	 <Tilt className= 'ml4 Tilt br2 shadow-2' options={defaultOptions} style={{ height: 100, width: 100 }}>
-      <div><img alt='logo' src={mylogoimg} /></div>
+      <div><a href="https://github.com/kmarfadi"><img alt='logo' src={mylogoimg} /></a></div>
     </Tilt>
 	);
 }
