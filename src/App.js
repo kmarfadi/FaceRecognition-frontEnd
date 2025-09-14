@@ -32,7 +32,7 @@ class App extends Component {
       input: '',
       imageUrl: null,
       boxes: [],
-      route: 'signin',  // Adjusted route to match signin
+      route: 'home',  // for demo purposes Adjusted route to match signin
       isSignedIn: false,
       user: {
         id: '',
